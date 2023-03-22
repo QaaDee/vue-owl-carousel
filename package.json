@@ -1,7 +1,18 @@
 {
-  "name": "vue-owl-carousel",
+  "name": "vue-owl-carousel2",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": {
+    "name": "QaaDee"
+  },
+  "keywords": [
+    "vuejs",
+    "carousel",
+    "owl-carousel",
+    "vue-components",
+    "vue-component",
+    "carousel-component"
+  ],
   "main": "dist/vue-owl-carousel.js",
   "files": [
     "dist/"
