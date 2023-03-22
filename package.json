@@ -1,0 +1,42 @@
+{
+  "name": "vue-owl-carousel",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/vue-owl-carousel.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sagalbot/vue-select.git"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "jquery": "^3.3.1",
+    "owl.carousel": "^2.3.4",
+    "vue": "^3.2.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@babel/plugin-transform-runtime": "*",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/compiler-sfc": "*",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "rollup": "^3.0.0",
+    "@rollup/plugin-commonjs": "^23.0.0",
+    "@rollup/plugin-babel": "^6.0.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "@rollup/plugin-terser": "^0.4.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
