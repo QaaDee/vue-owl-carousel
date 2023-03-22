@@ -2,7 +2,8 @@ import commonjs from '@rollup/plugin-commonjs'
 import VuePlugin from 'rollup-plugin-vue'
 import babel from "@rollup/plugin-babel";
 import webpack from "webpack";
-import terser from "@rollup/plugin-terser";
+import {uglify} from "rollup-plugin-uglify";
+import inject from "@rollup/plugin-inject";
 
 export default {
     input: 'src/Carousel.vue',
@@ -14,16 +15,10 @@ export default {
         }
     ],
     plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jquery: 'jquery',
-            'window.jQuery': 'jquery',
-            jQuery: 'jquery'
-        }),
         VuePlugin(),
         commonjs(),
         babel({
-            babelHelpers: 'runtime',
+            babelHelpers: 'bundle',
             presets: [
                 '@vue/cli-plugin-babel/preset'
             ],
@@ -31,7 +26,16 @@ export default {
                 ['@babel/plugin-transform-runtime', { useESModules: false }]
             ],
         }),
-        terser()
+        uglify({
+            mangle: true,
+        }),
+        inject({
+            include: '**/*.js',
+            exclude: 'node_modules/**',
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+        })
     ],
     external: ['vue']
 }
